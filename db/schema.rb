@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_13_074012) do
+ActiveRecord::Schema.define(version: 2021_08_13_123914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "tables", force: :cascade do |t|
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "car_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_id"], name: "index_bookings_on_car_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.string "car_name"
+    t.string "price"
+    t.string "time_duration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

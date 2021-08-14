@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
 
-    @user = User.find(params[:id]).bookings.cars
+    @user = User.find(params[:id]).bookings
     render json: @user
 
   end

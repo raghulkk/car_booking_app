@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :bookings
+
   resources :cars do
 
     get "/search", to: "cars#search"

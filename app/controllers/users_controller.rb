@@ -11,15 +11,15 @@ class UsersController < ApplicationController
 
   def bookings
 
-    @user = User.find(params[:id]).bookings
-    render json: @user
+    @bookings = User.find(params[:id]).bookings
+    render json: @bookings
 
   end
 
   def booked_cars
 
-    @user = User.find(params[:id]).cars
-    render json: @user
+    @cars = User.find(params[:id]).cars
+    render json: @cars
 
   end
 

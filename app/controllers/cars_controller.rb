@@ -1,6 +1,17 @@
 class CarsController < ApplicationController
 
-  skip_before_action :verify_authenticity_token  
+  skip_before_action :verify_authenticity_token 
+
+
+  def create
+
+      @cars = car.create(car_name: params[:car_name], price: params[:price], 
+                        time_duration: params[:time_duration])
+
+      render json: @cars.attributes 
+
+  end
+ 
 
   def list_cars
 
@@ -11,8 +22,8 @@ class CarsController < ApplicationController
 
   def bookings
 
-    @car = Car.find(params[:id]).bookings
-    render json: @car
+    @bookings = Car.find(params[:id]).bookings
+    render json: @bookings
 
   end
 

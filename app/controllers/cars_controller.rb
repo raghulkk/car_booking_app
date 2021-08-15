@@ -5,7 +5,7 @@ class CarsController < ApplicationController
 
   def create
 
-      @cars = car.create(car_name: params[:car_name], price: params[:price], 
+      @cars = Car.create(car_name: params[:car_name], price: params[:price], 
                         time_duration: params[:time_duration])
 
       render json: @cars.attributes 
@@ -13,7 +13,7 @@ class CarsController < ApplicationController
   end
  
 
-  def list_cars
+  def index
 
     @cars = Car.all
     render json: @cars.map{|elem| elem.attributes}

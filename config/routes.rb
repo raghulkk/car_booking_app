@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/users/:id/booked_cars", to: "users#booked_cars"
 
-  get "/cars/list_cars", to: "cars#list_cars"
+  #get "/cars/list_cars", to: "cars#list_cars"
 
   get "/cars/:id/bookings", to: "cars#bookings"
 

@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
      
       if @bookings
 
-         raise
+         raise "car already booked"
 
       else
 

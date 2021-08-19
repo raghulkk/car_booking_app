@@ -1,14 +1,33 @@
 class BookingsController < ApplicationController
 
-   skip_before_action :verify_authenticity_token  
+   skip_before_action :verify_authenticity_token 
+
+   
+     
+
 
    def create
 
-      @booking = Booking.create(user_id: params[:user_id], car_id: params[:car_id])
+      @bookings = Booking.find_by(car_id: params[:car_id], date: params[:date])
 
-      render json: @booking.attributes 
+     
+      if @bookings
+
+         raise
+
+      else
+
+         @booking = Booking.create(user_id: params[:user_id], 
+               car_id: params[:car_id], date: params[:date])
+
+      end
+
+      render json: @booking.attributes
+
 
   end
+
+
 
 end
 

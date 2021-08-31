@@ -2,7 +2,7 @@
 
 #car_booking_app
 
-  CAR_BOOKING_APP was designed a ROR application for a car rental company which allows the user to book a car for sometime. Assume main Stakeholders are User,Car,Booking. You are allowed to add more stakeholders. Every car will have its own amount to book. Ex. Baleno will cost 100 for a booking.
+  CAR_BOOKING_APP is used to design a ROR application for a car rental company which allows the user to book a car for sometime. Assume main Stakeholders are User,Car,Booking. You are allowed to add more stakeholders. Every car will have its own amount to book. Ex. Baleno will cost 100 for a booking.
 
   * model created for User, Car and Bookings 
   * creating column and records in tables by using migration in database

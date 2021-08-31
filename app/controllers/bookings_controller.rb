@@ -13,8 +13,9 @@ class BookingsController < ApplicationController
      
       if @bookings
 
-         raise "car already booked"
-
+         render json: {"error": "car already booked"}
+         return
+         
       else
 
          @booking = Booking.create(user_id: params[:user_id], 
